@@ -6,7 +6,7 @@ public class Board extends MockBoard {
 	public int nMines;
 	private int difficulty;
 	private long score;
-	private int[][] squares;
+	public int squares[][];
 
 	Board() {
 		 size = 0;
