@@ -12,7 +12,7 @@ public class Board extends MockBoard {
 		 size = 0;
 		 difficulty= 1;
 		 score=0;
-		 //squares= new int[size][size];
+		 squares= new int[size][size];
 		 for(int i = 0; i < size; i++) {
 			 for(int j = 0; j < size; j++) {
 				 squares[i][j]=0;
