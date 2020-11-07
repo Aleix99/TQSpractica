@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+
 public class BoardTest {
 
 	@Test
@@ -13,15 +14,22 @@ public class BoardTest {
 
 	@Test
 	public void testSetBoard() {
-		fail("Not yet implemented");
+		int test_1=10;
+		
+		Board b = new Board();
+		b.setBoard(1);
+		
+		assertEquals(test_1, b.size);
+		
 	}
 
 	@Test
 	public void testRestartBoard() {
 		Board b = new Board();
-		b.size;
 		
-		fail("Not yet implemented");
+		
+		
+		
 	}
 
 	@Test

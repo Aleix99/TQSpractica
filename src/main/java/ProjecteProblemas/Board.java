@@ -2,16 +2,17 @@ package ProjecteProblemas;
 
 public class Board extends MockBoard {
 	
-	private int size;
-	private int nMines;
+	public int size;
+	public int nMines;
 	private int difficulty;
 	private long score;
-	private int squares[][];
-	
-	 Board() {
+	private int[][] squares;
+
+	Board() {
 		 size = 0;
 		 difficulty= 1;
 		 score=0;
+		 //squares= new int[size][size];
 		 for(int i = 0; i < size; i++) {
 			 for(int j = 0; j < size; j++) {
 				 squares[i][j]=0;
@@ -20,7 +21,7 @@ public class Board extends MockBoard {
 	 }
 	 
 	 public void setBoard(int difficult) {
-		 difficulty = difficult;
+		difficulty = difficult;
 		switch (difficult) {
 		case(1): //easy
 			size=10;
@@ -37,16 +38,18 @@ public class Board extends MockBoard {
 		default:
 		}
 		
-		for(int i = 0; i < size; i++) {
-			 for(int j = 0; j < size; j++) {
-				 squares[i][j]=0; //0=normal number
-			 }
-		 }
+		//restartBoard();
 		
 	 }
 	 
 	 public void restartBoard() {
+		 for(int i = 0; i < size; i++) {
+			 for(int j = 0; j < size; j++) {
+				 squares[i][j]=0; //0=normal number
+			 }
+		 }
 		 
+		 //generateRandomMines();
 	 }
 	 
 	 public void generateRandomMines() {
