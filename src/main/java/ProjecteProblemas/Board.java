@@ -83,7 +83,11 @@ public class Board extends MockBoard {
 			for(int j = 0; j < this.size; j++)
 		    {
 		    	// 0 casilla vacia, 1 mina
-				System.out.print(" "+this.squares[i][j].value+" ");
+				if(this.squares[i][j].open) {
+					System.out.print(" "+this.squares[i][j].value+" ");
+				}
+				else
+					System.out.print(" "+"O"+" ");
 		    }
 			
 		    System.out.println();
