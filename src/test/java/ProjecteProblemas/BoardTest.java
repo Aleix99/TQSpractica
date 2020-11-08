@@ -43,14 +43,15 @@ public class BoardTest {
 		
 		int i=0;
 		int j=0;
-		while(check)
+		while(check && i < test_1)
 		{
-			while(check)
+			while(check && j < test_1)
 			{
 				if (squares[i][j].value != b.squares[i][j].value)
 					check=false;
 				j++;
 			}
+			j=0;
 			i++;
 		}
 		
@@ -116,10 +117,30 @@ public class BoardTest {
 	}
 
 	
-	/*@Test
+	@Test
 	public void testGenerateRandomMines() {
-		fail("Not yet implemented");
+		//Veremos si se ha puesto alguna bomba, con el check
+		boolean check=false;
+		int test_1=10;
+		Board board_1 = new Board();
+		board_1.setBoard(test_1);
+		
+		int i=0;
+		int j=0;
+		while(check && i < test_1)
+		{
+			while(check && j < test_1)
+			{
+				if (board_1.squares[i][j].value == "X")
+					check=true;
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		
+		assertTrue(check);
 	}
-	*/
+	
 
 }

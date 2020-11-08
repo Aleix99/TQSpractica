@@ -1,5 +1,7 @@
 package ProjecteProblemas;
 
+import java.util.Random;
+
 public class Board extends MockBoard {
 	
 	public int size;
@@ -13,11 +15,6 @@ public class Board extends MockBoard {
 		 difficulty= 1;
 		 score=0;
 		 squares= new Square[size][size];
-		 for(int i = 0; i < size; i++) {
-			 for(int j = 0; j < size; j++) {
-				 squares[i][j]=new Square();
-			 }
-		 }
 	 }
 	 
 	 public void setBoard(int difficult) {
@@ -25,11 +22,11 @@ public class Board extends MockBoard {
 		switch (difficult) {
 		case(1): //easy
 			size=10;
-			nMines=10;
+			nMines=20;
 			break;
 		case(2): //normal
 			size=16;
-			nMines=40;
+			nMines=80;
 			break;
 		case(3): //hard
 			size=20;
@@ -54,6 +51,7 @@ public class Board extends MockBoard {
 	 }
 	 
 	 public void generateRandomMines() {
-		 
+		
 	 }
+	
 }
