@@ -6,16 +6,16 @@ public class Board extends MockBoard {
 	public int nMines;
 	private int difficulty;
 	private long score;
-	public int squares[][];
+	public Square squares[][];
 
 	Board() {
 		 size = 0;
 		 difficulty= 1;
 		 score=0;
-		 squares= new int[size][size];
+		 squares= new Square[size][size];
 		 for(int i = 0; i < size; i++) {
 			 for(int j = 0; j < size; j++) {
-				 squares[i][j]=0;
+				 squares[i][j]=new Square();
 			 }
 		 }
 	 }
@@ -43,10 +43,10 @@ public class Board extends MockBoard {
 	 }
 	 
 	 public void restartBoard() {
-		 squares = new int[this.size][this.size];
+		 squares = new Square[this.size][this.size];
 		 for(int i = 0; i < this.size; i++) {
 			 for(int j = 0; j < this.size; j++) {
-				 squares[i][j]=0; //0=normal number
+				 squares[i][j]=new Square(); //0=normal number
 			 }
 		 }
 		 
