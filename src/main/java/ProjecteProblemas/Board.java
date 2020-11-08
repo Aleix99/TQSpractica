@@ -21,16 +21,16 @@ public class Board extends MockBoard {
 		difficulty = difficult;
 		switch (difficult) {
 		case(1): //easy
-			size=10;
-			nMines=20;
+			this.size=10;
+		this.nMines=20;
 			break;
 		case(2): //normal
-			size=16;
-			nMines=80;
+			this.size=16;
+		this.nMines=80;
 			break;
 		case(3): //hard
-			size=20;
-			nMines=100;
+			this.size=20;
+		this.nMines=100;
 			break;
 		default:
 		}
@@ -51,7 +51,22 @@ public class Board extends MockBoard {
 	 }
 	 
 	 public void generateRandomMines() {
-		
+	 
+		Random rand = new Random();
+		int num_minas_aux=0;
+		nMines =((size-2)*(size-2));
+		for(int i = 0; i < size; i++)
+		   {
+		      for(int j = 0; j < size; j++)
+		      {
+		    	   if ((rand.nextInt(2)==1)  && (num_minas_aux<nMines))
+		    	   {
+		    		   squares[i][j].makeBomb();
+		    		   num_minas_aux++;
+		    	   }
+		      }  
+		   }
+		   
 	 }
 	
 }

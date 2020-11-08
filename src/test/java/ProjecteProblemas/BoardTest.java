@@ -123,15 +123,16 @@ public class BoardTest {
 		boolean check=false;
 		int test_1=10;
 		Board board_1 = new Board();
-		board_1.setBoard(test_1);
+		board_1.setBoard(1);
+		board_1.generateRandomMines();
 		
 		int i=0;
 		int j=0;
-		while(check && i < test_1)
+		while(!check && i < test_1)
 		{
-			while(check && j < test_1)
+			while(!check && j < test_1)
 			{
-				if (board_1.squares[i][j].value == "X")
+				if (board_1.squares[i][j].value.equals("X"))
 					check=true;
 				j++;
 			}
