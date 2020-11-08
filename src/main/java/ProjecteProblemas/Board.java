@@ -38,13 +38,14 @@ public class Board extends MockBoard {
 		default:
 		}
 		
-		//restartBoard();
+		restartBoard();
 		
 	 }
 	 
 	 public void restartBoard() {
-		 for(int i = 0; i < size; i++) {
-			 for(int j = 0; j < size; j++) {
+		 squares = new int[this.size][this.size];
+		 for(int i = 0; i < this.size; i++) {
+			 for(int j = 0; j < this.size; j++) {
 				 squares[i][j]=0; //0=normal number
 			 }
 		 }
