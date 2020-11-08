@@ -7,11 +7,14 @@ import org.junit.Test;
 
 public class BoardTest {
 
+	/*
 	@Test
 	public void testBoard() {
 		fail("Not yet implemented");
 	}
+	*/
 
+	//Prueba
 	@Test
 	public void testSetBoard() {
 		int test_1=10;
@@ -33,8 +36,6 @@ public class BoardTest {
 		}
 		for(int i =0 ; i<test_1;i++) {
 			for(int j =0 ; j<test_1;j++) {
-				System.out.print(b.squares[1][1]);
-				System.out.print(squares[i][j]);
 
 				if(b.squares[i][j] != squares[i][j]) {
 					check=false;
