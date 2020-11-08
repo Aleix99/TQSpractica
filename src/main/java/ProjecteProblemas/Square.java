@@ -8,7 +8,7 @@ public class Square
 	Square()
 	{
 		open=false;
-		value="";
+		value="O";
 	}
 	
 	public void makeBomb()

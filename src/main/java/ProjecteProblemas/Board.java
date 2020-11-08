@@ -66,7 +66,30 @@ public class Board extends MockBoard {
 		    	   }
 		      }  
 		   }
-		   
+	 }
+	 
+	 public void drawBoard()
+	 {
+	 System.out.print("[F|C]");
+		for(int i=0; i<this.size; i++)
+			System.out.print("["+(i+1)+"]");
+		System.out.println();
+		for(int i = 0; i < this.size; i++)
+		{
+			if(i>=9) {
+				System.out.print("["+(i+1)+"] ");
+			}else {
+				System.out.print("["+(i+1)+"]  ");}
+			for(int j = 0; j < this.size; j++)
+		    {
+		    	// 0 casilla vacia, 1 mina
+				System.out.print(" "+this.squares[i][j].value+" ");
+		    }
+			
+		    System.out.println();
+		}
+		System.out.println(" ");
+		 
 	 }
 	
 }

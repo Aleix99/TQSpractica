@@ -141,6 +141,8 @@ public class BoardTest {
 		}
 		
 		assertTrue(check);
+		
+		board_1.drawBoard();
 	}
 	
 
