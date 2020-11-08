@@ -95,5 +95,10 @@ public class Board extends MockBoard {
 		System.out.println(" ");
 		 
 	 }
+	 
+	 public void openSquare(int i,int j)
+	 {
+		 
+	 }
 	
 }

@@ -145,5 +145,19 @@ public class BoardTest {
 		board_1.drawBoard();
 	}
 	
+	@Test
+	public void testOpenSquare()
+	{
+		boolean check=false;
+		int test_1=10;
+		Board board_1 = new Board();
+		board_1.setBoard(1);
+		board_1.openSquare(0, 0);
+		
+		check=board_1.squares[0][0].open;
+		
+		assertTrue(check);
+	}
+	
 
 }
