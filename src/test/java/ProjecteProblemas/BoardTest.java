@@ -167,6 +167,10 @@ public class BoardTest {
 		
 		assertTrue(board_2.openSquare(1, 1));
 		
+		//Ahora probamos que no se puede volver abrir una casilla abierta
+		assertFalse(board_2.openSquare(1, 1));
+		
+		
 	}
 	
 
