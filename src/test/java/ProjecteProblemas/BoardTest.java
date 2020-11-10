@@ -148,6 +148,7 @@ public class BoardTest {
 	@Test
 	public void testOpenSquare()
 	{
+		//Test para verificar si el método cambia el valor de un Square
 		boolean check=false;
 		int test_1=10;
 		Board board_1 = new Board();
@@ -157,6 +158,15 @@ public class BoardTest {
 		check=board_1.squares[0][0].open;
 		
 		assertTrue(check);
+		
+		//Como el Test anterior pero provando el nuevo diseño del código 
+		boolean check_2=false;
+		int test_2=10;
+		Board board_2 = new Board();
+		board_2.setBoard(2);
+		
+		assertTrue(board_2.openSquare(1, 1));
+		
 	}
 	
 
