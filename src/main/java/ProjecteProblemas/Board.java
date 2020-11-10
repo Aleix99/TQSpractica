@@ -105,5 +105,10 @@ public class Board extends MockBoard {
 		 else
 			 return false;
 	 }
+	 
+	 public void calculateValue()
+	 {
+		 
+	 }
 	
 }
