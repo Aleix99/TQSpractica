@@ -98,7 +98,10 @@ public class Board extends MockBoard {
 	 
 	 public void openSquare(int i,int j)
 	 {
-		 
+		 if(!this.squares[i][j].open) {
+			 this.squares[i][j].open=true;
+			 
+		 }
 	 }
 	
 }
