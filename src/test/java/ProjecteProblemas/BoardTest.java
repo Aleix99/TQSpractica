@@ -23,6 +23,7 @@ public class BoardTest {
 		int test_2=16;
 		int test_3=20;
 		int test_4=1;
+		
 		Square[][] squares;
 		squares = new Square[10][10];
 		boolean check = true;
@@ -35,75 +36,92 @@ public class BoardTest {
 		
 		
 		//Check si se ha inizializado bien (todas las casillas = 0)
-		for(int i =0 ; i<test_1;i++) {
-			for(int j =0 ; j<test_1;j++) {
-				squares[i][j] = new Square();
+			for(int i =0 ; i<test_1;i++) {
+				for(int j =0 ; j<test_1;j++) {
+					squares[i][j] = new Square();
+				}
 			}
-		}
-		
-		int i=0;
-		int j=0;
-		while(check && i < test_1)
-		{
-			while(check && j < test_1)
+			
+			int i=0;
+			int j=0;
+			while(check && i < test_1)
 			{
-				if (squares[i][j].value != b.squares[i][j].value)
-					check=false;
-				j++;
+				while(check && j < test_1)
+				{
+					if (squares[i][j].value != b.squares[i][j].value)
+						check=false;
+					j++;
+				}
+				j=0;
+				i++;
 			}
-			j=0;
-			i++;
-		}
+			//Comprobamos que las matrices se han inicializado correctamente
+			assertTrue(check);
 		
-		//Comprobamos que las matrices se han inicializado correctamente
-		assertTrue(check);
-		
-		/*
-		
-		//Comprobamos en el caso de dificultad 2
-		int[][] squares_2;
-		squares_2 = new int[test_2][test_2];
+		Square[][] squares_2;
+		squares_2 = new Square[test_2][test_2];
 		Board b_2 = new Board();
-		
+		check = true;
 		b_2.setBoard(2);
-		
-		
-		assertEquals(test_2, b_2.size);
-		
-		for(int i =0 ; i<test_2;i++) {
-			for(int j =0 ; j<test_2;j++) {
-				squares_2[i][j] = 0;
+		i=0;
+	    j=0;	
+		//Check si se ha inizializado bien (dificultad 2)
+			for( i =0 ; i<test_2;i++) {
+				for( j =0 ; j<test_2;j++) {
+					squares_2[i][j] = new Square();
+				}
 			}
-		}
-		
-		assertTrue(Arrays.deepEquals(b_2.squares,squares_2));
-		
-		
-		//Comprobamos en el caso de dificultad 3
-		int[][] squares_3;
-		squares_3 = new int[test_3][test_3];
+			 i=0;
+			 j=0;
+			while(check && i < test_2)
+			{
+				while(check && j < test_2)
+				{
+					if (squares_2[i][j].value != b_2.squares[i][j].value)
+						check=false;
+					j++;
+				}
+				j=0;
+				i++;
+			}
+			//Comprobamos que las matrices se han inicializado correctamente
+			assertTrue(check);
+			
+		Square[][] squares_3;
+		squares_3 = new Square[test_3][test_3];
 		Board b_3 = new Board();
-		
+		check = true;
 		b_3.setBoard(3);
-		
-		
-		assertEquals(test_3, b_3.size);
-		
-		for(int i =0 ; i<test_3;i++) {
-			for(int j =0 ; j<test_3;j++) {
-				squares_3[i][j] = 0;
+		i=0;
+	    j=0;	
+		//Check si se ha inizializado bien (dificultad 2)
+			for( i =0 ; i<test_3;i++) {
+				for( j =0 ; j<test_3;j++) {
+					squares_3[i][j] = new Square();
+				}
 			}
-		}
-		
-		assertTrue(Arrays.deepEquals(b_3.squares,squares_3));
-				
-				
-		//Caso default
-		int[][] squares_4;
-		squares_4 = new int[test_4][test_4];
-		Board b_4 = new Board();
-		
-		b_3.setBoard(0);*/
+			i=0;
+			j=0;
+			while(check && i < test_3)
+			{
+				while(check && j < test_3)
+				{
+					if (squares_3[i][j].value != b_3.squares[i][j].value)
+						check=false;
+					j++;
+				}
+				j=0;
+				i++;
+			}
+			//Comprobamos que las matrices se han inicializado correctamente
+			assertTrue(check);
+			
+			
+		//Pasamos por el Default
+			Board b_4 = new Board();
+			b_4.setBoard(4);
+			
+			assertEquals(0,b_4.size);
 		
 	}
 
