@@ -106,9 +106,51 @@ public class Board extends MockBoard {
 			 return false;
 	 }
 	 
-	 public void calculateValue()
+	 public void calculateValue() //Recursiva
 	 {
-		 
+		 for (int i=0 ; i<this.size;i++)
+		 {
+			 for( int j=0; j<this.size; j++)
+			 {
+				 if(i-1>=0) //Fila de arriba (1,2,3)
+				 {
+					 if(j-1>=0) 
+					 {
+						 if(this.squares[i][j].bomb) // Si detectamos hay mina
+						 {
+							 
+						 }
+					 }
+					 
+					 if(this.squares[i][j].bomb) // Si detectamos hay mina
+					 {
+						 
+					 }
+					 
+					 if(j+1<this.size) 
+					 {
+						 if(this.squares[i][j].bomb) // Si detectamos hay mina
+						 {
+							 
+						 }
+					 }
+				 }
+				 if(i-1>=0) //Fila de en medio(4,6)
+				 {
+					 if(this.squares[i][j].bomb) // Si detectamos hay mina
+					 {
+						 
+					 }
+				 }
+				 if(i-1>=0) //Fila de abajo (7,8,9)
+				 {
+					 if(this.squares[i][j].bomb) // Si detectamos hay mina
+					 { 
+						 
+					 }
+				 }
+			 }
+		 }
 	 }
 	
 }

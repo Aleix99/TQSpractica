@@ -150,7 +150,7 @@ public class BoardTest {
 		{
 			while(!check && j < test_1)
 			{
-				if (board_1.squares[i][j].value.equals("X"))
+				if (board_1.squares[i][j].bomb)
 					check=true;
 				j++;
 			}
