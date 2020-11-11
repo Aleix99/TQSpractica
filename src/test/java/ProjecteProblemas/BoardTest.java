@@ -269,6 +269,8 @@ public class BoardTest {
 		board_test_1.squares[7][7].makeBomb();
 		board_test_1.squares[8][7].makeBomb();
 		
+		board_test_1.calculateValue();
+		
 		boolean check=true;
 		
 		int i=0;
@@ -287,5 +289,11 @@ public class BoardTest {
 		assertTrue(check);
 	}
 	
+	
+	@Test
+	public void testPutFlag()
+	{
+		
+	}
 
 }

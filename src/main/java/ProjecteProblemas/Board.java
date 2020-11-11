@@ -1,5 +1,7 @@
 package ProjecteProblemas;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Board extends MockBoard {
@@ -9,6 +11,7 @@ public class Board extends MockBoard {
 	private int difficulty;
 	private long score;
 	public Square squares[][];
+	List<Pair> mines_position = new ArrayList<Pair>();
 
 	Board() {
 		 size = 0;
@@ -61,6 +64,8 @@ public class Board extends MockBoard {
 		      {
 		    	   if ((rand.nextInt(2)==1)  && (num_minas_aux<nMines))
 		    	   {
+		    		   Pair e = new Pair(i,j);
+		    		   mines_position.add(e);
 		    		   squares[i][j].makeBomb();
 		    		   num_minas_aux++;
 		    	   }
@@ -178,6 +183,18 @@ public class Board extends MockBoard {
 				 }
 			 }
 		 }
+	 }
+	 
+	 
+	 public boolean putFlag(int i, int j)
+	 {
+		 if(!this.squares[i][j].flag)
+		 {
+			 this.squares[i][j].flag=true;
+			 return true;
+		 }
+		 else
+			 return false;
 	 }
 	
 }

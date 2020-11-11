@@ -1,6 +1,9 @@
 package ProjecteProblemas;
 
-public class Square 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Square
 {
 	public boolean open;
 	public int value; //0,1,2,3,4,5,6,7 y 8
