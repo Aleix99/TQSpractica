@@ -188,7 +188,13 @@ public class Board extends MockBoard {
 	 
 	 public boolean putFlag(int i, int j)
 	 {
-		 return true;
+		 if((i>=0 && i<this.size) && (j>0 && j<this.size))
+		 {
+			 this.squares[i][j].makeFlag();
+			 return true;
+		 }
+		 else
+			 return false;
 	 }
 	
 }
