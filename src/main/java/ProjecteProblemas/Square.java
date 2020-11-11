@@ -22,5 +22,14 @@ public class Square
 	{
 		this.bomb=true;
 	}
+	
+	public void makeFlag()
+	{
+		if(this.flag)
+			this.flag=false;
+		else
+			this.flag=true;
+	}
+	
 
 }

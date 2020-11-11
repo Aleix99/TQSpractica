@@ -293,6 +293,29 @@ public class BoardTest {
 	@Test
 	public void testPutFlag()
 	{
+		//Ponemos bandera
+		Board b = new Board();
+		b.setBoard(1);
+		b.putFlag(1,1);
+		
+		assertEquals(true,b.squares[1][1].flag);
+		
+		//Ponemos otra vez bandera (osea la quitamos)
+		b.putFlag(1,1);
+		assertEquals(false,b.squares[1][1].flag);
+		
+		//Nos salimos de los límites de la matriz
+		assertEquals(false,b.putFlag(-1,-1));
+		
+		//Nos salimos de los límites de la matriz
+		assertEquals(false,b.putFlag(100,100));
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 

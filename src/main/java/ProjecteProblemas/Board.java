@@ -188,13 +188,7 @@ public class Board extends MockBoard {
 	 
 	 public boolean putFlag(int i, int j)
 	 {
-		 if(!this.squares[i][j].flag)
-		 {
-			 this.squares[i][j].flag=true;
-			 return true;
-		 }
-		 else
-			 return false;
+		 return true;
 	 }
 	
 }
