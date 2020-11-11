@@ -83,8 +83,12 @@ public class Board extends MockBoard {
 			for(int j = 0; j < this.size; j++)
 		    {
 		    	// 0 casilla vacia, 1 mina
-				if(this.squares[i][j].open) {
-					System.out.print(" "+this.squares[i][j].value+" ");
+				if(this.squares[i][j].open) 
+				{
+					if(!this.squares[i][j].bomb)
+						System.out.print(" "+this.squares[i][j].value+" ");
+					else
+						System.out.print(" "+"X"+" ");
 				}
 				else
 					System.out.print(" "+"O"+" ");
@@ -116,38 +120,61 @@ public class Board extends MockBoard {
 				 {
 					 if(j-1>=0) 
 					 {
-						 if(this.squares[i][j].bomb) // Si detectamos hay mina
+						 if(this.squares[i-1][j-1].bomb) // Si detectamos hay mina (1)
 						 {
-							 
+							 this.squares[i][j].value++;
 						 }
 					 }
 					 
-					 if(this.squares[i][j].bomb) // Si detectamos hay mina
+					 if(this.squares[i-1][j].bomb) // Si detectamos hay mina (2)
 					 {
-						 
+						 this.squares[i][j].value++;
 					 }
 					 
 					 if(j+1<this.size) 
 					 {
-						 if(this.squares[i][j].bomb) // Si detectamos hay mina
+						 if(this.squares[i-1][j+1].bomb) // Si detectamos hay mina (3)
 						 {
-							 
+							 this.squares[i][j].value++;
 						 }
 					 }
 				 }
-				 if(i-1>=0) //Fila de en medio(4,6)
+				 if(j-1>=0) //Fila de en medio(4,6)
 				 {
-					 if(this.squares[i][j].bomb) // Si detectamos hay mina
+					 if(this.squares[i][j-1].bomb) // Si detectamos hay mina (4)
 					 {
-						 
+						 this.squares[i][j].value++;
 					 }
 				 }
-				 if(i-1>=0) //Fila de abajo (7,8,9)
+				 
+				 if(j+1<this.size) //Fila de en medio(4,6)
 				 {
-					 if(this.squares[i][j].bomb) // Si detectamos hay mina
-					 { 
-						 
+					 if(this.squares[i][j+1].bomb) // Si detectamos hay mina (6)
+					 {
+						 this.squares[i][j].value++;
 					 }
+				 }
+				 
+				 
+				 if(i+1<this.size) //Fila de abajo (7,8,9)
+				 {
+					 if(j-1>=0) {
+						 if(this.squares[i+1][j-1].bomb) // Si detectamos hay mina (6)
+						 {
+							 this.squares[i][j].value++;
+						 }
+					 }
+					 if(this.squares[i+1][j].bomb) // Si detectamos hay mina (7)
+					 { 
+						 this.squares[i][j].value++;
+					 }
+					 if(j+1<this.size) {
+						 if(this.squares[i+1][j+1].bomb) // Si detectamos hay mina (6)
+						 {
+							 this.squares[i][j].value++;
+						 }
+					 }
+					 
 				 }
 			 }
 		 }
