@@ -191,5 +191,101 @@ public class BoardTest {
 		
 	}
 	
+	@Test
+	public void testCalculateValue()
+	{
+		int test_1=10;
+		Board board_mock_1 = new Board();
+		board_mock_1.setBoard(1);
+		
+		//Primera fila de bombas
+		board_mock_1.squares[0][0].makeBomb();
+		board_mock_1.squares[0][2].makeBomb();
+		board_mock_1.squares[0][3].makeBomb();
+		board_mock_1.squares[0][4].makeBomb();
+		board_mock_1.squares[0][5].makeBomb();
+			//Valor de las casillas
+		board_mock_1.squares[0][1].value="2";
+			board_mock_1.squares[0][6].value="1";
+			board_mock_1.squares[1][0].value="1";
+			board_mock_1.squares[1][1].value="2";
+			board_mock_1.squares[1][2].value="2";
+			board_mock_1.squares[1][3].value="3";
+			board_mock_1.squares[1][4].value="3";
+			board_mock_1.squares[1][5].value="2";
+			board_mock_1.squares[1][6].value="1";
+			
+		//Segunda fila de minas
+			board_mock_1.squares[3][7].makeBomb();
+			//Valor de las casillas
+			board_mock_1.squares[2][6].value="1";
+			board_mock_1.squares[2][7].value="1";
+			board_mock_1.squares[2][8].value="1";
+			board_mock_1.squares[3][6].value="1";
+			board_mock_1.squares[3][8].value="1";
+			board_mock_1.squares[4][4].value="1";
+			board_mock_1.squares[4][5].value="1";
+			board_mock_1.squares[4][6].value="3";
+			board_mock_1.squares[4][7].value="2";
+			board_mock_1.squares[4][8].value="2";
+		
+		//Tercera fila de minas
+			board_mock_1.squares[5][5].makeBomb();
+			board_mock_1.squares[5][7].makeBomb();
+			//Valor de las casillas
+			board_mock_1.squares[5][4].value="1";
+			board_mock_1.squares[5][6].value="2";
+			board_mock_1.squares[5][8].value="1";
+			board_mock_1.squares[6][4].value="1";
+			board_mock_1.squares[6][5].value="1";
+			board_mock_1.squares[6][6].value="3";
+			board_mock_1.squares[6][7].value="2";
+			board_mock_1.squares[6][8].value="2";
+			
+		//Cuarta fila de minas
+			board_mock_1.squares[7][7].makeBomb();
+			//Valor casillas
+			board_mock_1.squares[7][6].value="2";
+			board_mock_1.squares[7][8].value="2";
+		//Quinta fila de minas
+			board_mock_1.squares[8][7].makeBomb();
+			//Valor casillas
+			board_mock_1.squares[8][6].value="2";
+			board_mock_1.squares[8][8].value="2";
+			board_mock_1.squares[9][6].value="1";
+			board_mock_1.squares[8][7].value="1";
+			board_mock_1.squares[8][8].value="1";
+			
+		Board board_test_1 = new Board();
+		board_test_1.setBoard(1);
+		board_test_1.squares[0][0].makeBomb();
+		board_test_1.squares[0][2].makeBomb();
+		board_test_1.squares[0][3].makeBomb();
+		board_test_1.squares[0][4].makeBomb();
+		board_test_1.squares[0][5].makeBomb();
+		board_test_1.squares[3][7].makeBomb();
+		board_test_1.squares[5][5].makeBomb();
+		board_test_1.squares[5][7].makeBomb();
+		board_test_1.squares[7][7].makeBomb();
+		board_test_1.squares[8][7].makeBomb();
+		
+		boolean check=true;
+		
+		int i=0;
+		int j=0;
+		while(check && i < test_1)
+		{
+			while(check && j < test_1)
+			{
+				if (!board_test_1.squares[i][j].value.equals(board_mock_1.squares[i][j].value))
+					check=false;
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		assertTrue(check);
+	}
+	
 
 }

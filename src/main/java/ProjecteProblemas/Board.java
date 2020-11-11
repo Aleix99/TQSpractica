@@ -22,15 +22,15 @@ public class Board extends MockBoard {
 		switch (difficult) {
 		case(1): //easy
 			this.size=10;
-		this.nMines=20;
+			this.nMines=10;
 			break;
 		case(2): //normal
 			this.size=16;
-		this.nMines=80;
+			this.nMines=40;
 			break;
 		case(3): //hard
 			this.size=20;
-		this.nMines=100;
+			this.nMines=70;
 			break;
 		default:
 		}
