@@ -343,6 +343,7 @@ public class BoardTest {
 		
 	}
 	
+	
 	@Test
 	public void testRecursiveOpenSquare()
 	{
@@ -369,6 +370,7 @@ public class BoardTest {
 		
 		//Pondremos bombas, calcularemos valores para las casillas y verificaremos
 		//si el método nos da igual al tablero "Mock"
+		
 		Board b_2 = new Board();
 		b_2.setBoard(1);
 		b_2.squares[0][0].makeBomb();
@@ -419,22 +421,20 @@ public class BoardTest {
 		int j_2=0;
 		while(check_2 && i_2 < b_2.size)
 		{
-			while(check_2 && j_2 < b.size)
+			while(check_2 && j_2 < b_2.size)
 			{
-				if (b_2.squares[i][j].open !=b_mock2.squares[i][j].open )
+				if (b_2.squares[i_2][j_2].open != b_mock2.squares[i_2][j_2].open)
+				{
 					check_2=false;
-				j++;
+				}
+				j_2++;
 			}
-			j=0;
-			i++;
+			j_2=0;
+			i_2++;
 		}
 		assertEquals(true,check);
 		
-		
-		
-		
-		
-		
 	}
+	
 
 }

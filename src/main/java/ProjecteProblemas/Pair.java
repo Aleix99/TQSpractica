@@ -9,5 +9,5 @@ public class Pair {
 	    { 
 	        this.x = x; 
 	        this.y = y; 
-	    } 
+	    }
 } 
