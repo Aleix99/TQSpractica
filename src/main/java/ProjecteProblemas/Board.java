@@ -188,13 +188,27 @@ public class Board extends MockBoard {
 	 
 	 public boolean putFlag(int i, int j)
 	 {
-		 if((i>=0 && i<this.size) && (j>0 && j<this.size))
+		 if((i>=0 && i<this.size) && (j>=0 && j<this.size))
 		 {
 			 this.squares[i][j].makeFlag();
 			 return true;
 		 }
 		 else
 			 return false;
+	 }
+	 
+	 public boolean gameOver()
+	 {
+		 boolean check=true;
+		 int i=0;
+		 while (check && i<this.size)
+		 {
+			if(!this.squares[this.mines_position.get(i).x][this.mines_position.get(i).y].flag)
+				check=false;
+			else
+				i++;
+		 }
+		 return check;
 	 }
 	
 }

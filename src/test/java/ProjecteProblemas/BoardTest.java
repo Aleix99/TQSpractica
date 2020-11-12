@@ -310,12 +310,36 @@ public class BoardTest {
 		//Nos salimos de los límites de la matriz
 		assertEquals(false,b.putFlag(100,100));
 		
+	}
+	
+	@Test
+	public void testgameOver()
+	{
+		Board b = new Board();
+		b.setBoard(1); //10 minas
+		//Ponemos las 10 minas en el tablero
+		b.squares[0][0].makeBomb();
+		b.squares[0][1].makeBomb();
+		b.squares[0][2].makeBomb();
+		b.squares[0][3].makeBomb();
+		b.squares[0][4].makeBomb();
+		b.squares[0][5].makeBomb();
+		b.squares[0][6].makeBomb();
+		b.squares[0][7].makeBomb();
+		b.squares[0][8].makeBomb();
+		b.squares[0][9].makeBomb();
 		
+		//Indicamos al tablero las posiciones de las minas
+		for(int i=0;i<b.size;i++) {
+			Pair e= new Pair(0,i);
+			b.mines_position.add(e);
+		}
 		
-		
-		
-		
-		
+		//Ponemos las banderas en las minas puestas
+		for(int i=0;i<b.size;i++) {
+			b.putFlag(b.mines_position.get(i).x, b.mines_position.get(i).y);
+		}
+		assertEquals(true,b.gameOver());
 		
 	}
 
