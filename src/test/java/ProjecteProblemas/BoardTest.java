@@ -357,7 +357,7 @@ public class BoardTest {
 		{
 			while(check && j < b.size)
 			{
-				if (!b.squares[i][j].flag)
+				if (!b.squares[i][j].open)
 					check=false;
 				j++;
 			}
@@ -365,6 +365,74 @@ public class BoardTest {
 			i++;
 		}
 		assertEquals(true,check);
+		
+		
+		//Pondremos bombas, calcularemos valores para las casillas y verificaremos
+		//si el método nos da igual al tablero "Mock"
+		Board b_2 = new Board();
+		b_2.setBoard(1);
+		b_2.squares[0][0].makeBomb();
+		b_2.squares[0][2].makeBomb();
+		b_2.squares[0][3].makeBomb();
+		b_2.squares[0][4].makeBomb();
+		b_2.squares[0][5].makeBomb();
+		b_2.squares[3][7].makeBomb();
+		b_2.squares[5][5].makeBomb();
+		b_2.squares[5][7].makeBomb();
+		b_2.squares[7][7].makeBomb();
+		b_2.squares[8][7].makeBomb();
+		
+		b_2.calculateValue();
+		b_2.recursiveOpenSquare(0, 9);
+		
+		Board b_mock2 = new Board();
+		b_mock2.setBoard(1);
+		b_mock2.openSquare(0, 6);
+		b_mock2.openSquare(0, 7);
+		b_mock2.openSquare(0, 8);
+		b_mock2.openSquare(0, 9);
+		b_mock2.openSquare(1, 6);
+		b_mock2.openSquare(1, 7);
+		b_mock2.openSquare(1, 8);
+		b_mock2.openSquare(1, 9);
+		b_mock2.openSquare(2, 6);
+		b_mock2.openSquare(2, 7);
+		b_mock2.openSquare(2, 8);
+		b_mock2.openSquare(2, 9);
+		b_mock2.openSquare(3, 8);
+		b_mock2.openSquare(3, 9);
+		b_mock2.openSquare(4, 8);
+		b_mock2.openSquare(4, 9);
+		b_mock2.openSquare(5, 8);
+		b_mock2.openSquare(5, 9);
+		b_mock2.openSquare(6, 8);
+		b_mock2.openSquare(6, 9);
+		b_mock2.openSquare(7, 8);
+		b_mock2.openSquare(7, 9);
+		b_mock2.openSquare(8, 8);
+		b_mock2.openSquare(8, 9);
+		b_mock2.openSquare(9, 8);
+		b_mock2.openSquare(9, 9);
+		
+		boolean check_2=true;
+		int i_2=0;
+		int j_2=0;
+		while(check_2 && i_2 < b_2.size)
+		{
+			while(check_2 && j_2 < b.size)
+			{
+				if (b_2.squares[i][j].open !=b_mock2.squares[i][j].open )
+					check_2=false;
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		assertEquals(true,check);
+		
+		
+		
+		
 		
 		
 	}
