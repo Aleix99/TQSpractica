@@ -50,7 +50,7 @@ public class Board extends MockBoard {
 			 }
 		 }
 		 
-		 //generateRandomMines();
+		 //generateRandomMines(); NO lo llamaremos directamente
 	 }
 	 
 	 public void generateRandomMines() {
@@ -209,6 +209,11 @@ public class Board extends MockBoard {
 				i++;
 		 }
 		 return check;
+	 }
+	 
+	 public void recursiveOpenSquare(int i, int j)
+	 {
+		 
 	 }
 	
 }

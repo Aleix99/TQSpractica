@@ -342,5 +342,31 @@ public class BoardTest {
 		assertEquals(true,b.gameOver());
 		
 	}
+	
+	@Test
+	public void testRecursiveOpenSquare()
+	{
+		//No pondremos ninguna bomba, así que todas las casillas deberán ser abiertas
+		Board b = new Board();
+		b.setBoard(1); //10x10
+		b.recursiveOpenSquare(0, 0);
+		boolean check=true;
+		int i=0;
+		int j=0;
+		while(check && i < b.size)
+		{
+			while(check && j < b.size)
+			{
+				if (!b.squares[i][j].flag)
+					check=false;
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		assertEquals(true,check);
+		
+		
+	}
 
 }
