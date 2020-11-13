@@ -315,6 +315,7 @@ public class BoardTest {
 	@Test
 	public void testgameOver()
 	{
+		
 		Board b = new Board();
 		b.setBoard(1); //10 minas
 		//Ponemos las 10 minas en el tablero
