@@ -94,7 +94,7 @@ public class BoardTest {
 		b_3.setBoard(3);
 		i=0;
 	    j=0;	
-		//Check si se ha inizializado bien (dificultad 2)
+		//Check si se ha inizializado bien (dificultad 3)
 			for( i =0 ; i<test_3;i++) {
 				for( j =0 ; j<test_3;j++) {
 					squares_3[i][j] = new Square();
