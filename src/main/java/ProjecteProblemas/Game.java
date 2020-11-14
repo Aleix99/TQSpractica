@@ -21,16 +21,14 @@ public class Game {
 	
 	public void gameStart(int i)
 	{
-		/*
-		b.setBoard(i);
 		b.generateRandomMines();
 		b.calculateValue();
-		b.drawBoard(); //Introduce bandera o abre mina
+		b.drawBoard();
 		while(!b.gameOver() && !b.loseGame())
 		{
-			
+			playSquare();
+			b.drawBoard();
 		}
-		*/
 		
 	}
 	
@@ -53,6 +51,7 @@ public class Game {
 	
 	public void initializeBoard(int difficult)
 	{
+		
 		b.setBoard(difficult);
 		
 	}
