@@ -12,12 +12,18 @@ public class Board extends MockBoard {
 	private long score;
 	public Square squares[][];
 	List<Pair> mines_position = new ArrayList<Pair>();
+	Random rand = new Random();
 
 	Board() {
 		 size = 0;
 		 difficulty= 1;
 		 score=0;
 		 squares= new Square[size][size];
+	 }
+	
+	 public void setRandom(Random random)
+	 {
+		 rand=random;
 	 }
 	 
 	 public void setBoard(int difficult) {
@@ -54,8 +60,6 @@ public class Board extends MockBoard {
 	 }
 	 
 	 public void generateRandomMines() {
-	 
-		Random rand = new Random();
 		int num_minas_aux=0;
 		nMines =((size-2)*(size-2));
 		for(int i = 0; i < size; i++)
@@ -201,9 +205,21 @@ public class Board extends MockBoard {
 	 
 	 public boolean loseGame()
 	 {
+		 boolean check=false;
+		 int i=0;
+		 while (!check && i<mines_position.size())
+		 {
+			if(this.squares[this.mines_position.get(i).x][this.mines_position.get(i).y].open)
+			{
+				check=true;
+			}
+			else
+			{
+				i++;
+			}
+		 }
 		 
-		 
-		 return false;
+		 return check;
 	 }
 	 
 	 public boolean gameOver() //Añadimos caso abre mina

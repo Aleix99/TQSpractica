@@ -442,18 +442,32 @@ public class BoardTest {
 	{
 		//Caso jugador abre mina
 		Board b=new Board();
+		randomMock rand = new randomMock();
+		Pair[] pairs=new Pair[1];
+		pairs[0]=new Pair(1,1);
 		b.setBoard(1);
-		b.squares[1][1].makeBomb();
+		rand.setMinesPosition(pairs,b.size);
+		
+		b.setRandom(rand);
+		b.generateRandomMines();
+		//b.squares[1][1].makeBomb();
 		b.openSquare(1, 1);
 		
 		assertEquals(true,b.loseGame());
 		
 		//Caso jugador no abre mina
-		Board b_2=new Board();
-		b_2.setBoard(1);
-		b_2.squares[1][1].makeBomb();
 		
-		assertEquals(true,b_2.loseGame());
+		Board b_2=new Board();
+		randomMock rand_2 = new randomMock();
+		Pair[] pairs_2=new Pair[1];
+		pairs_2[0]=new Pair(1,1);
+		b_2.setBoard(1);
+		rand_2.setMinesPosition(pairs_2,b_2.size);
+		b_2.setRandom(rand_2);
+		b_2.generateRandomMines();
+		
+		assertEquals(false,b_2.loseGame());
+	
 		
 		
 		
