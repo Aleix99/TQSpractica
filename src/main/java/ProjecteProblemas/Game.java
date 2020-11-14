@@ -36,6 +36,8 @@ public class Game {
 	
 	public void playSquare()
 	{
+		//System.out.println("Introduce la accion que que deseas realizar 1 -> Abrir casilla || 2 -> Poner o quitar bandera");
+		
 		
 	}
 	

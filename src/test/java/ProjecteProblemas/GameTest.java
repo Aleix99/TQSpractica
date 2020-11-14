@@ -81,22 +81,22 @@ public class GameTest {
 	public void testPlaySquare()
 	{
 		//Usuario pone una bandera en el 0,0
-		MockKeyboard keymock = new MockKeyboard();
-		Game maingame = new Game();
-		Board board_1= new Board();
-		int[] input_1= new int[1];
-		
-		board_1.setBoard(1);
-		
-		Pair[] pairs=new Pair[1];
-		pairs[0]=new Pair(0,0);
-		keymock.setGametype(input_1);
-		keymock.setPositions(pairs);
-		
-		maingame.setKeyboard(keymock);
-		maingame.playSquare();
-		
-		//assertEquals(10,d.size);
+			MockKeyboard keymock = new MockKeyboard();
+			Game maingame = new Game();
+			Board board_1= new Board();
+			int[] input_1= new int[1];
+			
+			board_1.setBoard(1);
+			
+			Pair[] pairs=new Pair[1];
+			pairs[0]=new Pair(0,0);
+			keymock.setGametype(input_1);
+			keymock.setPositions(pairs);
+			
+			maingame.setKeyboard(keymock);
+			maingame.playSquare();
+
+		assertEquals(true,board_1.squares[0][0].flag);
 		
 		
 	}
