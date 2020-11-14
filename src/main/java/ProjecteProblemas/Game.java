@@ -36,14 +36,25 @@ public class Game {
 	
 	public void playSquare()
 	{
-		//System.out.println("Introduce la accion que que deseas realizar 1 -> Abrir casilla || 2 -> Poner o quitar bandera");
+		System.out.println("Introduce la accion que que deseas realizar 1 -> Abrir casilla || 2 -> Poner o quitar bandera");
+		int typeMove = k.getInput_Gametype(b.size);
+		Pair e = k.getPositions(b.size);
 		
-		
+		if(typeMove==1) // Open Square
+		{
+			b.openSquare(e.x, e.y);
+		}
+		else //	Put/Remove Flag
+		{
+			b.putFlag(e.x, e.y);
+		}
+
 	}
 	
 	public void initializeBoard(int difficult)
 	{
 		b.setBoard(difficult);
+		
 	}
 	
 	

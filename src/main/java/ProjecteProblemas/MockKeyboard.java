@@ -19,26 +19,29 @@ public class MockKeyboard extends Keyboard {
 	public void setGametype(int[] inputs)
 	{
 		input=inputs;
+		gametype_index=0;
 	}
 	
 	public void setPositions(Pair[] potitions)
 	{
 		position=potitions;
+		positions_index=0;
 	}
 	
 	public void setGamedifficult(int[] inputs)
 	{
 		difficult=inputs;
+		difficult_index=0;
 	}
 	
-	public Pair getPositions()
+	public Pair getPositions(int size)
 	{
 		Pair pass=position[positions_index];
 		positions_index++;
 		return pass;
 	}
 	
-	public int getInput_Gametype()
+	public int getInput_Gametype(int size)
 	{
 		int pass=input[gametype_index];
 		gametype_index++;
