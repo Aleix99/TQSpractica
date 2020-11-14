@@ -483,14 +483,6 @@ public class BoardTest {
 		
 		assertEquals(false,b_2.loseGame());
 	
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 

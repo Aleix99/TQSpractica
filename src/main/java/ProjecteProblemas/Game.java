@@ -37,7 +37,6 @@ public class Game {
 	public void playSquare()
 	{
 		
-		
 	}
 	
 	public void initializeBoard(int difficult)
