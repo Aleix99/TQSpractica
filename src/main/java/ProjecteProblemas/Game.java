@@ -19,6 +19,8 @@ public class Game {
 	
 	public void startGame()
 	{
+		//Esta parte da error
+		/*
 		tab.initablero(tab.getmida());
 		System.out.println(" ");
 		tab.initminas();
@@ -35,6 +37,7 @@ public class Game {
 			tab.dibujar_user();
 			tab.felicitar();
 		}
+		*/
 		
 	}
 
