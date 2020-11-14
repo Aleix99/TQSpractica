@@ -18,8 +18,8 @@ public class Keyboard {
 		while(!check)
 		{
 			Scanner sc = new Scanner(System.in);
-			first = (int) sc.next().charAt(0) - 48;
-			second = (int) sc.next().charAt(0) - 48;
+			first = (int) sc.nextInt();
+			second = (int) sc.nextInt();
 			if(first>=1 && first<=size+1 && second>=1 && second<=size+1)
 				check=true;
 			else

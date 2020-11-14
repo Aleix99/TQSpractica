@@ -16,20 +16,8 @@ public class BoardTest {
 		Board d = new Board();
 		d.setBoard(1);
 		assertEquals(10,d.size);
-		
-		
-		
-	}
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
+	}
 	*/
 	
 	@Test

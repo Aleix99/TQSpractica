@@ -6,6 +6,8 @@ import java.util.Random;
 
 public class Board extends MockBoard {
 	
+	public int nFlag_max;
+	public int nFlag_put;
 	public int size;
 	public int nMines;
 	private int difficulty;
@@ -32,14 +34,17 @@ public class Board extends MockBoard {
 		case(1): //easy
 			this.size=10;
 			this.nMines=10;
+			this.nFlag_max=10;
 			break;
 		case(2): //normal
 			this.size=16;
 			this.nMines=40;
+			this.nFlag_max=40;
 			break;
 		case(3): //hard
 			this.size=20;
 			this.nMines=70;
+			this.nFlag_max=70;
 			break;
 		default:
 		}
@@ -61,7 +66,6 @@ public class Board extends MockBoard {
 	 
 	 public void generateRandomMines() {
 		int num_minas_aux=0;
-		nMines =((size-2)*(size-2));
 		for(int i = 0; i < size; i++)
 		   {
 		      for(int j = 0; j < size; j++)
@@ -69,6 +73,8 @@ public class Board extends MockBoard {
 		    	   if ((rand.nextInt(2)==1)  && (num_minas_aux<nMines))
 		    	   {
 		    		   Pair e = new Pair(i,j);
+		    		   //System.out.print(i);
+		    		   //System.out.print(j);
 		    		   mines_position.add(e);
 		    		   squares[i][j].makeBomb();
 		    		   num_minas_aux++;
@@ -99,8 +105,10 @@ public class Board extends MockBoard {
 					else
 						System.out.print(" "+"X"+" ");
 				}
-				//else if(this.squares[i][j].flag) BANDERAS ESTO NO ESTABA
-					//System.out.print(" "+"P"+" ");
+				else if(this.squares[i][j].flag)
+				{
+					System.out.print(" "+"P"+" ");
+				}
 				else
 					System.out.print(" "+"O"+" ");
 		    }
@@ -196,8 +204,22 @@ public class Board extends MockBoard {
 	 {
 		 if((i>=0 && i<this.size) && (j>=0 && j<this.size))
 		 {
-			 this.squares[i][j].makeFlag();
-			 return true;
+			 if(nFlag_put<nFlag_max)
+			 {
+				 this.squares[i][j].makeFlag();
+				 nFlag_put++;
+				 return true;
+			 }
+			 else
+			 {
+				 if(this.squares[i][j].flag)
+				 {
+					 this.squares[i][j].makeFlag();
+					 nFlag_put--;
+				 }
+					 return false;
+			 }
+				 
 		 }
 		 else
 			 return false;
@@ -226,16 +248,19 @@ public class Board extends MockBoard {
 	 {
 		 boolean check=true;
 		 int i=0;
-		 while (check && i<this.size)
+		 if(mines_position.size()>0)
 		 {
-			if(!this.squares[this.mines_position.get(i).x][this.mines_position.get(i).y].flag)
-			{
-				check=false;
-			}
-			else
-			{
-				i++;
-			}
+			 while (check && i<this.size)
+			 {
+				if(!this.squares[this.mines_position.get(i).x][this.mines_position.get(i).y].flag)
+				{
+					check=false;
+				}
+				else
+				{
+					i++;
+				}
+			 }
 		 }
 		 
 		 return check;

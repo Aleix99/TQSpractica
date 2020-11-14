@@ -1,5 +1,7 @@
 package ProjecteProblemas;
 
+import java.util.Scanner;
+
 public class Client 
 {
 	static Keyboard generalkeyboard = new Keyboard();
@@ -33,8 +35,6 @@ public class Client
 			 break;
 		 }
 		return;
-		
-		
 	}
 
 }

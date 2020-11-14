@@ -22,6 +22,7 @@ public class Game {
 	public void gameStart(int i)
 	{
 		b.generateRandomMines();
+		System.out.print(b.mines_position.size());
 		b.calculateValue();
 		b.drawBoard();
 		while(!b.gameOver() && !b.loseGame())
@@ -34,17 +35,19 @@ public class Game {
 	
 	public void playSquare()
 	{
-		System.out.println("Introduce la accion que que deseas realizar 1 -> Abrir casilla || 2 -> Poner o quitar bandera");
+		System.out.println("Choose: 1 -> Open Square || 2 -> Put/Remove Flag");
 		int typeMove = k.getInput_Gametype(b.size);
+		System.out.println("Enter coordinates");
 		Pair e = k.getPositions(b.size);
 		
 		if(typeMove==1) // Open Square
 		{
-			b.openSquare(e.x, e.y);
+			b.openSquare(e.x-1, e.y-1);
+			b.recursiveOpenSquare(e.x-1, e.y-1);
 		}
 		else //	Put/Remove Flag
 		{
-			b.putFlag(e.x, e.y);
+			b.putFlag(e.x-1, e.y-1);
 		}
 
 	}
