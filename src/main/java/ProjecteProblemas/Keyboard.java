@@ -1,7 +1,9 @@
 package ProjecteProblemas;
 
+import java.util.Scanner;
 
 public class Keyboard {
+	private Scanner scanner;
 	Pair[] position;
 	int input;
 	
@@ -9,14 +11,17 @@ public class Keyboard {
 		
 	}
 	
-	public Pair[] getPositions()
+	public Pair getPositions()
 	{
-		return position;
+		Pair e=new Pair(0,0);
+		return e;
 	}
 	
-	public int getInput()
+	public int getInput_Gametype()
 	{
-		return input;
+		Scanner sc = new Scanner(System.in);
+		int x = (int) sc.next().charAt(0) - 48;
+		return x;
 	}
 	
 }

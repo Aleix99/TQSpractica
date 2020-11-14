@@ -7,8 +7,8 @@ public class MockKeyboard extends Keyboard {
 
 	Pair[] position;
 	int[] input;
-	int gametype_index; //1-Open Square 2-Put/Remove Flag
 	int positions_index;
+	int gametype_index; //1-Open Square 2-Put/Remove Flag
 	
 	public MockKeyboard(){
 		
@@ -24,19 +24,17 @@ public class MockKeyboard extends Keyboard {
 		position=potitions;
 	}
 	
-	
-	public Pair[] getPositions()
+	public Pair getPositions()
 	{
-		return position;
+		Pair pass=position[positions_index];
+		positions_index++;
+		return pass;
 	}
 	
-	public int[] getInput_Gametype()
+	public int getInput_Gametype()
 	{
-		return input;
-	}
-	
-	public Pair[] getInput_positions()
-	{
-		return position;
+		int pass=input[gametype_index];
+		gametype_index++;
+		return pass;
 	}
 }
