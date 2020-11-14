@@ -7,8 +7,10 @@ public class MockKeyboard extends Keyboard {
 
 	Pair[] position;
 	int[] input;
+	int[] difficult;
 	int positions_index;
 	int gametype_index; //1-Open Square 2-Put/Remove Flag
+	int difficult_index;
 	
 	public MockKeyboard(){
 		
@@ -24,6 +26,11 @@ public class MockKeyboard extends Keyboard {
 		position=potitions;
 	}
 	
+	public void setGamedifficult(int[] inputs)
+	{
+		difficult=inputs;
+	}
+	
 	public Pair getPositions()
 	{
 		Pair pass=position[positions_index];
@@ -35,6 +42,13 @@ public class MockKeyboard extends Keyboard {
 	{
 		int pass=input[gametype_index];
 		gametype_index++;
+		return pass;
+	}
+	
+	public int getInput_GameDifficult()
+	{
+		int pass=difficult[difficult_index];
+		difficult_index++;
 		return pass;
 	}
 }
