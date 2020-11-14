@@ -199,7 +199,14 @@ public class Board extends MockBoard {
 			 return false;
 	 }
 	 
-	 public boolean gameOver()
+	 public boolean loseGame()
+	 {
+		 
+		 
+		 return false;
+	 }
+	 
+	 public boolean gameOver() //Añadimos caso abre mina
 	 {
 		 boolean check=true;
 		 int i=0;
@@ -214,6 +221,7 @@ public class Board extends MockBoard {
 				i++;
 			}
 		 }
+		 
 		 return check;
 	 }
 	 

@@ -13,32 +13,15 @@ public class Game {
 		k=keyboard;
 	}
 	
+	/*
 	public static void main(String[] args) {
 		Board b = new Board();
 	}
+	*/
 	
-	public void startGame()
+	public void gameStart(int i)
 	{
-		//Esta parte da error
-		/*
-		tab.initablero(tab.getmida());
-		System.out.println(" ");
-		tab.initminas();
-		tab.distNum();
-		System.out.println("	GAME  START!  ");
-		System.out.println(" ");
-		while(tab.getBanderas()!=tab.getnumMinas() && playing)
-		{
-		tab.dibujar_user();
-		jugada();
-		}
-		if(tab.getBanderas()==tab.getnumMinas())
-		{
-			tab.dibujar_user();
-			tab.felicitar();
-		}
-		*/
-		
+
 	}
 
 }

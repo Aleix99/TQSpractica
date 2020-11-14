@@ -40,9 +40,13 @@ public class GameTest {
 		int i=0;
 		boolean playing=true;
 		
+		/*
+		
+		
 		//while(i<10) {
 		board.drawBoard();
 		//TimeUnit.SECONDS.sleep(1);
+		
 		
 		//USER INPUTS x AND y
 		if (board.openSquare(mk.position.x, mk.position.y)) { 
@@ -57,7 +61,7 @@ public class GameTest {
 		//}
 		
 		assert(playing);
-		
+		*/
 		
 	}
 }

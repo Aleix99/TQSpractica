@@ -437,5 +437,32 @@ public class BoardTest {
 		
 	}
 	
+	@Test
+	public void testLoseGame()
+	{
+		//Caso jugador abre mina
+		Board b=new Board();
+		b.setBoard(1);
+		b.squares[1][1].makeBomb();
+		b.openSquare(1, 1);
+		
+		assertEquals(true,b.loseGame());
+		
+		//Caso jugador no abre mina
+		Board b_2=new Board();
+		b_2.setBoard(1);
+		b_2.squares[1][1].makeBomb();
+		
+		assertEquals(true,b_2.loseGame());
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
 
 }
