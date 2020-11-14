@@ -1,15 +1,15 @@
 package ProjecteProblemas;
 
 
-public class Keyboard extends MockKeyboard{
-	Pair position;
+public class Keyboard {
+	Pair[] position;
 	int input;
 	
 	public Keyboard(){
 		
 	}
 	
-	public Pair getPositions()
+	public Pair[] getPositions()
 	{
 		return position;
 	}

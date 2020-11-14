@@ -1,36 +1,21 @@
 package ProjecteProblemas;
 
 import static org.junit.Assert.*;
-import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 public class GameTest {
-
-	Board b = new Board();
-	MockKeyboard mk = new MockKeyboard();
-	
-	@Test
-	void testSetBoard(Board board) {
-		b=board;
-	}
-
-	@Test
-	void testSetKeyboard(MockKeyboard mkeyboard) {
-		mk=mkeyboard;
-	}
 	
 	
 	@Test
 	public void testMain() throws InterruptedException {
 
+		Game game1=new Game();
 		Board board = new Board();
-		
 		MockKeyboard mKeyboard = new MockKeyboard();
+		game1.setKeyboard(mKeyboard);
 		
 		//input del usuario para introducir la dificultad
 		mKeyboard.input=1;
-		mKeyboard.position = new Pair(2,5);
-		
 		
 		//supuestos inputs del usuario para seleccionar la casilla que quiere abrir
 		/*mKeyboard.position = new Pair[10]; //10 = #casillas que abrirá
@@ -45,9 +30,7 @@ public class GameTest {
 		mKeyboard.position[8]=new Pair(8,2); 
 		mKeyboard.position[9]=new Pair(3,9);
 		*/
-		testSetKeyboard(mKeyboard);
 		
-		board.setBoard(mk.input);
 		
 		board.generateRandomMines();
 		
@@ -59,7 +42,7 @@ public class GameTest {
 		
 		//while(i<10) {
 		board.drawBoard();
-		TimeUnit.SECONDS.sleep(1);
+		//TimeUnit.SECONDS.sleep(1);
 		
 		//USER INPUTS x AND y
 		if (board.openSquare(mk.position.x, mk.position.y)) { 
