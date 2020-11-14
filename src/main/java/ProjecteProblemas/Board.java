@@ -14,7 +14,7 @@ public class Board extends MockBoard {
 	List<Pair> mines_position = new ArrayList<Pair>();
 	Random rand = new Random();
 
-	Board() {
+	Board() { //Testeado entero
 		 size = 0;
 		 difficulty= 1;
 		 score=0;
@@ -26,7 +26,7 @@ public class Board extends MockBoard {
 		 rand=random;
 	 }
 	 
-	 public void setBoard(int difficult) {
+	 public void setBoard(int difficult) { //Todo entero
 		difficulty = difficult;
 		switch (difficult) {
 		case(1): //easy

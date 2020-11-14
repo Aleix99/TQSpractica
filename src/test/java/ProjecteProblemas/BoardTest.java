@@ -10,13 +10,28 @@ import org.junit.Test;
 public class BoardTest {
 
 	/*
+	//Prueba
 	@Test
 	public void testBoard() {
-		fail("Not yet implemented");
+		Board d = new Board();
+		d.setBoard(1);
+		assertEquals(10,d.size);
+		
+		
+		
 	}
-	*/
+	
 
-	//Prueba
+	
+	
+	
+	
+	
+	
+	
+	
+	*/
+	
 	@Test
 	public void testSetBoard() {
 		int test_1=10;

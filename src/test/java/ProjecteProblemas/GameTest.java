@@ -7,7 +7,7 @@ public class GameTest {
 	
 	
 	@Test
-	public void testMain() throws InterruptedException {
+	public void testMain() {
 
 		Game game1=new Game();
 		Board board = new Board();
@@ -64,4 +64,30 @@ public class GameTest {
 		*/
 		
 	}
+	
+	@Test 
+	public void testInitializeBoard()
+	{
+		Game maingame = new Game();
+		Board d = new Board();
+		maingame.setBoard(d);
+		maingame.initializeBoard(1);
+		
+		assertEquals(10,d.size);
+	}
+	
+	@Test
+	public void testPlaySquare()
+	{
+		/*
+		MockKeyboard keymock = new MockKeyboard();
+		Game maingame = new Game();
+		Board board_1= new Board();
+		board_1.setBoard(1);
+		
+		maingame.setKeyboard(keymock);
+		*/
+		
+	}
+	
 }

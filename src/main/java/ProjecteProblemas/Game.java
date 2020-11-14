@@ -26,11 +26,25 @@ public class Game {
 		b.generateRandomMines();
 		b.calculateValue();
 		b.drawBoard(); //Introduce bandera o abre mina
-		while(!b.gameOver())
+		while(!b.gameOver() && !b.loseGame())
 		{
 			
 		}
 		*/
+		
 	}
+	
+	public void playSquare()
+	{
+		
+		
+	}
+	
+	public void initializeBoard(int difficult)
+	{
+		b.setBoard(difficult);
+	}
+	
+	
 
 }
