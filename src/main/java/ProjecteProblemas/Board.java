@@ -206,9 +206,18 @@ public class Board extends MockBoard {
 		 {
 			 if(nFlag_put<nFlag_max)
 			 {
-				 this.squares[i][j].makeFlag();
-				 nFlag_put++;
-				 return true;
+				 if(!this.squares[i][j].flag)
+				 {
+					 this.squares[i][j].makeFlag();
+					 nFlag_put++;
+					 return true;
+				 }
+				 else
+				 {
+					 this.squares[i][j].makeFlag();
+					 nFlag_put--;
+					 return false;
+				 }
 			 }
 			 else
 			 {
