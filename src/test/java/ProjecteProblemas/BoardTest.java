@@ -298,7 +298,7 @@ public class BoardTest {
 	{
 		//Ponemos bandera
 		Board b = new Board();
-		b.setBoard(1);
+		b.setBoard(1); // Size= 10
 		b.putFlag(1,1);
 		
 		assertEquals(true,b.squares[1][1].flag);
@@ -307,12 +307,37 @@ public class BoardTest {
 		b.putFlag(1,1);
 		assertEquals(false,b.squares[1][1].flag);
 		
-		//Nos salimos de los límites de la matriz
-		assertEquals(false,b.putFlag(-1,-1));
-		
-		//Nos salimos de los límites de la matriz
-		assertEquals(false,b.putFlag(100,100));
-		
+		//Condition Coverage y Caja Negra ( Valores límite y frontera)
+			//Nos salimos de los límites de la matriz
+			assertEquals(false,b.putFlag(-1,-1));
+			assertEquals(false,b.putFlag(-1,1));
+			assertEquals(false,b.putFlag(1,-1));
+			
+			assertEquals(false,b.putFlag(100,-1));
+			assertEquals(false,b.putFlag(-1,100));
+			
+			assertEquals(false,b.putFlag(1,100));
+			
+			//Nos salimos de los límites de la matriz
+			assertEquals(false,b.putFlag(100,100));
+			
+		//Path
+			assertEquals(true,b.putFlag(0,0));
+			assertEquals(true,b.putFlag(0,1));
+			assertEquals(true,b.putFlag(0,2));
+			assertEquals(true,b.putFlag(0,3));
+			assertEquals(true,b.putFlag(0,4));
+			assertEquals(true,b.putFlag(0,5));
+			assertEquals(true,b.putFlag(0,6));
+			assertEquals(true,b.putFlag(0,7));
+			assertEquals(true,b.putFlag(0,8));
+			assertEquals(true,b.putFlag(0,9));
+			//No le dejará
+			assertEquals(true,b.putFlag(1,0));
+			//
+			assertEquals(true,b.putFlag(0,9));
+			assertEquals(true,b.putFlag(1,0));
+			
 	}
 	
 	@Test
