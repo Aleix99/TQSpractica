@@ -321,7 +321,7 @@ public class BoardTest {
 			//Nos salimos de los límites de la matriz
 			assertEquals(false,b.putFlag(100,100));
 			
-		//Path
+		//Path coverage
 			assertEquals(true,b.putFlag(0,0));
 			assertEquals(true,b.putFlag(0,1));
 			assertEquals(true,b.putFlag(0,2));
@@ -333,44 +333,59 @@ public class BoardTest {
 			assertEquals(true,b.putFlag(0,8));
 			assertEquals(true,b.putFlag(0,9));
 			//No le dejará
-			assertEquals(true,b.putFlag(1,0));
+			assertEquals(false,b.putFlag(1,0));
 			//
-			assertEquals(true,b.putFlag(0,9));
+			assertEquals(false,b.putFlag(0,9));
 			assertEquals(true,b.putFlag(1,0));
 			
 	}
 	
 	@Test
-	public void testgameOver()
-	{
-		
-		Board b = new Board();
-		b.setBoard(1); //10 minas
-		//Ponemos las 10 minas en el tablero
-		b.squares[0][0].makeBomb();
-		b.squares[0][1].makeBomb();
-		b.squares[0][2].makeBomb();
-		b.squares[0][3].makeBomb();
-		b.squares[0][4].makeBomb();
-		b.squares[0][5].makeBomb();
-		b.squares[0][6].makeBomb();
-		b.squares[0][7].makeBomb();
-		b.squares[0][8].makeBomb();
-		b.squares[0][9].makeBomb();
-		
-		//Indicamos al tablero las posiciones de las minas
-		for(int i=0;i<b.size;i++) {
-			Pair e= new Pair(0,i);
-			b.mines_position.add(e);
-		}
-		
-		//Ponemos las banderas en las minas puestas
-		for(int i=0;i<b.size;i++) {
-			b.putFlag(b.mines_position.get(i).x, b.mines_position.get(i).y);
-		}
-		assertEquals(true,b.gameOver());
-		
-	}
+    public void testgameOver()
+    {
+           
+        Board b = new Board();
+        b.setBoard(1); //10 minas
+       
+        //Caso no hay minas
+        assertEquals(true,b.gameOver());
+       
+        //Ponemos las 10 minas en el tablero
+        b.squares[0][0].makeBomb();
+        b.squares[0][1].makeBomb();
+        b.squares[0][2].makeBomb();
+        b.squares[0][3].makeBomb();
+        b.squares[0][4].makeBomb();
+        b.squares[0][5].makeBomb();
+        b.squares[0][6].makeBomb();
+        b.squares[0][7].makeBomb();
+        b.squares[0][8].makeBomb();
+        b.squares[0][9].makeBomb();
+       
+        //Indicamos al tablero las posiciones de las minas
+        for(int i=0;i<b.size;i++) {
+            Pair e= new Pair(0,i);
+            b.mines_position.add(e);
+        }
+       
+        //Ponemos las banderas en las minas puestas
+        for(int i=0;i<b.size;i++) {
+            b.putFlag(b.mines_position.get(i).x, b.mines_position.get(i).y);
+        }
+        assertEquals(true,b.gameOver());
+       
+       
+        //Ponemos las banderas en las minas puestas menos en la 8
+        for(int i=0;i<b.size;i++) {
+            if (i==8){
+                i=i;
+            }
+            else
+                b.putFlag(b.mines_position.get(i).x, b.mines_position.get(i).y);
+        }
+        assertEquals(false,b.gameOver());
+       
+    }
 	
 	
 	@Test
@@ -496,6 +511,23 @@ public class BoardTest {
 		
 		assertEquals(false,b_2.loseGame());
 	
+	}
+	
+	@Test
+	public void testDrawBoard()
+	{
+		//Test Caixa blanca: Decision, Condition, Path
+		Board b=new Board();
+		b.setBoard(1);
+		b.squares[0][0].value=1;
+		b.squares[0][0].open=true;
+		b.squares[0][1].makeBomb();
+		b.squares[0][1].open=true;
+		b.putFlag(0, 2);
+		
+		b.drawBoard();
+		
+		
 	}
 	
 

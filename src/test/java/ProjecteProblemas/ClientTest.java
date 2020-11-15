@@ -27,7 +27,17 @@ public class ClientTest {
 		mainBoard.testgameOver();
 		mainBoard.testRecursiveOpenSquare();
 		mainBoard.testLoseGame();
+		mainBoard.testDrawBoard();
 		
 	}
+	/*
+	@Test
+	public void testMain()
+	{
+		Client mainClient = new Client();
+		mainClient.main(null);
+		
+	}
+	*/
 
 }

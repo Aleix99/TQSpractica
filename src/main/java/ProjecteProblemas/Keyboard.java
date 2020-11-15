@@ -20,10 +20,10 @@ public class Keyboard {
 			Scanner sc = new Scanner(System.in);
 			first = (int) sc.nextInt();
 			second = (int) sc.nextInt();
-			if(first>=1 && first<=size+1 && second>=1 && second<=size+1)
+			if(first>=1 && first<=size && second>=1 && second<=size)
 				check=true;
 			else
-				System.out.print("Inválido.Introduce los valores otra vez");
+				System.out.print("Coordinates are wrong. Retry again");
 		}
 		Pair e =new Pair(first, second);
 		return e;

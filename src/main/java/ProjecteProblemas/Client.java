@@ -7,6 +7,7 @@ public class Client
 	static Keyboard generalkeyboard = new Keyboard();
 	
 	
+	
 	public static void main(String [] args) 
 	{
 		Game generalGame = new Game();

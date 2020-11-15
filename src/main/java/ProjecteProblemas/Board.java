@@ -85,37 +85,37 @@ public class Board extends MockBoard {
 	 
 	 public void drawBoard()
 	 {
-	 System.out.print("[F|C]");
-		for(int i=0; i<this.size; i++)
-			System.out.print("["+(i+1)+"]");
-		System.out.println();
-		for(int i = 0; i < this.size; i++)
-		{
-			if(i>=9) {
-				System.out.print("["+(i+1)+"] ");
-			}else {
-				System.out.print("["+(i+1)+"]  ");}
-			for(int j = 0; j < this.size; j++)
-		    {
-		    	// 0 casilla vacia, 1 mina
-				if(this.squares[i][j].open) 
-				{
-					if(!this.squares[i][j].bomb)
-						System.out.print(" "+this.squares[i][j].value+" ");
+		 System.out.print("[F|C]");
+			for(int i=0; i<this.size; i++)
+				System.out.print("["+(i+1)+"]");
+			System.out.println();
+			for(int i = 0; i < this.size; i++)
+			{
+				if(i>=9) {
+					System.out.print("["+(i+1)+"] ");
+				}else {
+					System.out.print("["+(i+1)+"]  ");}
+				for(int j = 0; j < this.size; j++)
+			    {
+			    	// 0 casilla vacia, 1 mina
+					if(this.squares[i][j].open) 
+					{
+						if(!this.squares[i][j].bomb)
+							System.out.print(" "+this.squares[i][j].value+" ");
+						else
+							System.out.print(" "+"X"+" ");
+					}
+					else if(this.squares[i][j].flag)
+					{
+						System.out.print(" "+"P"+" ");
+					}
 					else
-						System.out.print(" "+"X"+" ");
-				}
-				else if(this.squares[i][j].flag)
-				{
-					System.out.print(" "+"P"+" ");
-				}
-				else
-					System.out.print(" "+"O"+" ");
-		    }
-			
-		    System.out.println();
-		}
-		System.out.println(" ");
+						System.out.print(" "+"O"+" ");
+			    }
+				
+			    System.out.println();
+			}
+			System.out.println(" ");
 		 
 	 }
 	 

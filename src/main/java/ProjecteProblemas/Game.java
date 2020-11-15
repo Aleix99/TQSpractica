@@ -30,7 +30,6 @@ public class Game {
 			playSquare();
 			b.drawBoard();
 		}
-		
 	}
 	
 	public void playSquare()

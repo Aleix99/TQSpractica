@@ -5,11 +5,31 @@ import org.junit.Test;
 
 public class GameTest {
 	
-	
-	@Test
-	public void testMain() {
+	/*
+	public void testGameStart() 
+	{
+		//Hacemos un test de una una jugada (el jugador pone bandera en casilla 0,0) - Path Coverage
+		Game mainGame = new Game();
+		Board b =new Board();
+		MockKeyboard mockKeyboard = new MockKeyboard();
+		
+		mainGame.setBoard(b);
+		mainGame.setKeyboard(mockKeyboard);
+		b.setBoard(1);
+		
+		int[] input_1= new int[1];
+		input_1[0]=2;
+		
+		Pair[] pairs=new Pair[1];
+		pairs[0]=new Pair(1,1); //Se restará y se pondrá en la 0,0
+		mockKeyboard.setGametype(input_1);
+		mockKeyboard.setPositions(pairs);
+		
+		mainGame.gameStart(0);
 		
 	}
+	*/
+	
 	
 	@Test 
 	public void testInitializeBoard()
