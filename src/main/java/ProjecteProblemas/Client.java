@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class Client 
 {
 	static Keyboard generalkeyboard = new Keyboard();
+	static Game generalGame = new Game();
 	
 	
 	
 	public static void main(String [] args) 
 	{
-		Game generalGame = new Game();
+		//Game generalGame = new Game();
 		
 		//Menu
 		System.out.println("   MINE FINDER :  ");
@@ -36,6 +37,16 @@ public class Client
 			 break;
 		 }
 		return;
+	}
+	
+	public void setKeyboard(Keyboard key)
+	{
+		generalkeyboard=key;
+	}
+	
+	public void setGame(Game game)
+	{
+		generalGame=game;
 	}
 
 }

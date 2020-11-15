@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Board extends MockBoard {
+public class Board {
 	
 	public int nFlag_max;
 	public int nFlag_put;
@@ -60,7 +60,6 @@ public class Board extends MockBoard {
 				 squares[i][j]=new Square(); //0=normal number
 			 }
 		 }
-		 
 		 //generateRandomMines(); NO lo llamaremos directamente
 	 }
 	 

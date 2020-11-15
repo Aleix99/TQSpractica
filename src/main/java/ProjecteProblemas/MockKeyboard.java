@@ -9,7 +9,7 @@ public class MockKeyboard extends Keyboard {
 	int[] input;
 	int[] difficult;
 	int positions_index;
-	int gametype_index; //1-Open Square 2-Put/Remove Flag
+	int gametype_index;//1-Open Square 2-Put/Remove Flag
 	int difficult_index;
 	
 	public MockKeyboard(){
