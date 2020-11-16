@@ -25,6 +25,14 @@ public class ClientTest {
 		mainClient.main(null);
 		testGame();
 		
+		//Inicializamos el juego y salimos (default)
+		int[] input_3= new int[1];
+		input_1[0]=5;		
+		mKey.setGametype(input_3);
+		mainClient.setKeyboard(mKey);
+		mainClient.main(null);
+		testGame();
+		
 		//Test de Coverage
 		//Ahora le damos a play y configuramos un tablero que nos devuelva un game over.
 		MockBoard mBoard = new MockBoard();

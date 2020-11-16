@@ -35,6 +35,9 @@ public class Client
 			   System.out.println("Bye!");
 		       //System.exit(1); //non zero value to exit says abnormal termination of JVM
 			 break;
+		 default:
+			 System.out.println("Bye!");
+			 break;
 		 }
 		return;
 	}

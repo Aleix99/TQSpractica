@@ -282,14 +282,7 @@ public class Board {
 		 {
 			 if(this.squares[i][j].value==0)
 			 {
-			 /*if(j-1>=0 && i-1>=0) // arriba izq 
-				{
-					if((!this.squares[i-1][j-1].bomb && !this.squares[i-1][j-1].open)) 
-					{
-						this.squares[i-1][j-1].open=true;
-						recursiveOpenSquare(i-1,j-1);
-					}
-				}*/
+			
 				if(j>=0 && i-1>=0) // arriba 
 				{
 					if(!this.squares[i-1][j].bomb && !this.squares[i-1][j].open) 
@@ -298,14 +291,7 @@ public class Board {
 						recursiveOpenSquare(i-1,j);
 					}
 				}
-				/*if((j+1>=0 && j+1 < this.size) && i-1>=0) // arriba derecha 
-				{
-					if(!this.squares[i-1][j+1].bomb &&  !this.squares[i-1][j+1].open)
-					{
-						this.squares[i-1][j+1].open=true;
-						recursiveOpenSquare(i-1,j+1);
-					}
-				}*/
+				
 				if(j-1>=0 && i>=0) // izq 
 				{
 					if(!this.squares[i][j-1].bomb && !this.squares[i][j-1].open) 
@@ -322,14 +308,7 @@ public class Board {
 						recursiveOpenSquare(i,j+1);
 					}
 				}
-				/*if(j-1>=0 && (i+1>=0 && i+1 <this.size)) // abajo izq
-				{
-					if(!this.squares[i+1][j-1].bomb && !this.squares[i+1][j-1].open) 
-					{
-						this.squares[i+1][j-1].open=true;
-						recursiveOpenSquare(i+1,j-1);
-					}
-				}*/
+				
 				if(j>=0 && (i+1>=0 && i+1 <this.size)) // abajo
 				{
 					if(!this.squares[i+1][j].bomb && !this.squares[i+1][j].open) 
@@ -338,14 +317,7 @@ public class Board {
 						recursiveOpenSquare(i+1,j);
 					}
 				}
-				/*if((j+1>=0 && j+1<this.size) && (i+1>=0 && i+1<this.size)) // abajo izq
-				{
-					if(!this.squares[i+1][j+1].bomb && !this.squares[i+1][j+1].open) 
-					{
-						this.squares[i+1][j+1].open=true;
-						recursiveOpenSquare(i+1,j+1);
-					}
-				}*/
+				
 			 }
 		 }
 	 }
