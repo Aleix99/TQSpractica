@@ -169,6 +169,36 @@ public class BoardTest {
 		}
 		assertTrue(check);
 		board_1.drawBoard();
+		
+		//Loop Testing - Caja Blanca
+			//No pasa por el bucle 
+			Board board_2 = new Board();
+			board_2.size=0;
+			board_2.generateRandomMines();
+			
+			//Pasará 1 vez por el bucle
+			Board board_3 = new Board();
+			board_3.size=1;
+			board_3.generateRandomMines();
+			
+			//Pasará 2 vez por el bucle
+			Board board_4 = new Board();
+			board_4.size=1;
+			board_4.generateRandomMines();
+			
+			//Pasará n<m vez por el bucle
+			Board board_5 = new Board();
+			board_5.setBoard(1);
+			board_5.size=board_5.size-1;
+			board_5.generateRandomMines();
+			
+			//Pasará n=m veces por el bucle
+			board_5.size=board_5.size+1;
+			board_5.generateRandomMines();
+			
+			
+		
+		
 	}
 	
 	@Test
