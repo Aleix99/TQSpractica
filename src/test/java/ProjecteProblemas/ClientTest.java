@@ -6,8 +6,8 @@ import org.junit.Test;
 
 public class ClientTest {
 	
-	//En esta clase juntaremos todos los test realizados para comprobar 
-	//el coverage del código que tenemos
+	//En esta clase juntaremos todos los test realizado
+	//Coverage completo en las clases creadas del juego
 
 	@Test
 	public void testClient()
