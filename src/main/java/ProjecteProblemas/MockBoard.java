@@ -27,11 +27,12 @@ public class MockBoard extends Board {
 		 squares= new Square[size][size];
 	 }
 	
-	
+	/*
 	public void setRandom(Random random)
 	 {
 		 rand=random;
 	 }
+	 */
 	
 	
 	public void generateRandomMines()
@@ -49,11 +50,12 @@ public class MockBoard extends Board {
 	 {
 		 return lose_game;
 	 }
+	 /*
 	 public boolean putFlag(int i, int j)
 	 {
 		 game_over=true;
 		 return false;
-	 }
+	 }*/
 	 public boolean openSquare(int i,int j)
 	 {
 		 game_over=true;

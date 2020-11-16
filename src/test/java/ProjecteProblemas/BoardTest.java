@@ -9,23 +9,18 @@ import org.junit.Test;
 
 public class BoardTest {
 
-	/*
-	//Prueba
-	@Test
-	public void testBoard() {
-		Board d = new Board();
-		d.setBoard(1);
-		assertEquals(10,d.size);
-
-	}
-	*/
-	
 	@Test
 	public void testSetBoard() {
-		int test_1=10;
-		int test_2=16;
-		int test_3=20;
-		int test_4=1;
+		
+		//Test de Caja negra - Particiones equivalentes y valores límites/frontera
+		//Check si se ha inizializado bien (todas las casillas = 0)
+		int test_1=10; //Válido
+		int test_2=16; //Válido
+		int test_3=20; //Válido
+		int test_4=1; //Inválido
+		int test_5=-1; //Inválido
+		int test_6=100; //Inválido
+		
 		
 		Square[][] squares;
 		squares = new Square[10][10];
@@ -34,11 +29,10 @@ public class BoardTest {
 		
 		b.setBoard(1);
 		
-		
 		assertEquals(test_1, b.size);
 		
 		
-		//Check si se ha inizializado bien (todas las casillas = 0)
+		
 			for(int i =0 ; i<test_1;i++) {
 				for(int j =0 ; j<test_1;j++) {
 					squares[i][j] = new Square();
@@ -58,6 +52,7 @@ public class BoardTest {
 				j=0;
 				i++;
 			}
+			
 			//Comprobamos que las matrices se han inicializado correctamente
 			assertTrue(check);
 		
@@ -120,11 +115,31 @@ public class BoardTest {
 			assertTrue(check);
 			
 			
-		//Pasamos por el Default
+		//Pasamos por el Default - Coverage y Path
 			Board b_4 = new Board();
 			b_4.setBoard(4);
-			
 			assertEquals(0,b_4.size);
+			
+		//Valores frontera
+			Square[][] squares_5;
+			squares_5 = new Square[test_5][test_5];
+			Board b_5 = new Board();
+			check = true;
+			b_5.setBoard(test_5);
+			//Comprobamos que el tablero no se inicializa correctamente
+			assertEquals(0,b_5.size);
+			
+			
+			Square[][] squares_6;
+			squares_6 = new Square[test_6][test_6];
+			Board b_6 = new Board();
+			check = true;
+			b_6.setBoard(test_6);
+			//Comprobamos que el tablero no se inicializa correctamente
+			assertEquals(0,b_6.size);
+			
+			
+		
 		
 	}
 

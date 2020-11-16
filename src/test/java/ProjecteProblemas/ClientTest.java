@@ -5,11 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ClientTest {
+	
+	//En esta clase juntaremos todos los test realizados para comprobar 
+	//el coverage del código que tenemos
 
 	@Test
 	public void testClient()
 	{
-		
+		//Test de Coverage
 		Client mainClient = new Client();
 		MockKeyboard mKey = new MockKeyboard();
 		
@@ -22,6 +25,7 @@ public class ClientTest {
 		mainClient.main(null);
 		testGame();
 		
+		//Test de Coverage
 		//Ahora le damos a play y configuramos un tablero que nos devuelva un game over.
 		MockBoard mBoard = new MockBoard();
 		mBoard.game_over=true;

@@ -28,11 +28,13 @@ public class MockKeyboard extends Keyboard {
 		positions_index=0;
 	}
 	
+	/*
 	public void setGamedifficult(int[] inputs)
 	{
 		difficult=inputs;
 		difficult_index=0;
 	}
+	*/
 	
 	public Pair getPositions(int size)
 	{
