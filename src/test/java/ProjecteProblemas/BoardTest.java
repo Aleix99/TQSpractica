@@ -141,12 +141,15 @@ public class BoardTest {
 	public void testRestartBoard() {
 		//Coverage
 		Board b = new Board();
+		b.restartBoard();
+		assertEquals(0,b.size);
 	}
 
 	
 	@Test
 	public void testGenerateRandomMines() {
 		//Coverage Testing
+		//Caixa negre
 		//Veremos si se ha puesto alguna bomba, con el check
 		boolean check=false;
 		int test_1=10;
@@ -183,7 +186,7 @@ public class BoardTest {
 			
 			//Pasará 2 vez por el bucle
 			Board board_4 = new Board();
-			board_4.size=1;
+			board_4.size=2;
 			board_4.generateRandomMines();
 			
 			//Pasará n<m vez por el bucle
@@ -204,6 +207,8 @@ public class BoardTest {
 	@Test
 	public void testOpenSquare()
 	{
+		//Caja Negra - Particion equivalentes y valores frontera
+		//Valores válidos
 		//Test Coverage, Decision y Condition
 		//Test Path Coverage: El método tiene 2 caminos
 			//Check para verificar si el método cambia el valor de un Square ( Camino 1: Casilla está cerrada y la abrimos)
@@ -227,6 +232,18 @@ public class BoardTest {
 			//Camino 2: La casilla ya está abierta
 			//Ahora probamos que no se puede volver abrir una casilla abierta
 			assertFalse(board_2.openSquare(1, 1));
+			//Valores inválidos, se salen de frontera
+			assertEquals(false,board_2.putFlag(-1,-1));
+			assertEquals(false,board_2.putFlag(-1,1));
+			assertEquals(false,board_2.putFlag(1,-1));
+			
+			assertEquals(false,board_2.putFlag(100,-1));
+			assertEquals(false,board_2.putFlag(-1,100));
+			
+			assertEquals(false,board_2.putFlag(1,100));
+			assertEquals(false,board_2.putFlag(100,100));
+			
+		
 		
 		
 	}

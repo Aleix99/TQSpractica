@@ -13,7 +13,7 @@ public class Board {
 	private int difficulty;
 	private long score;
 	public Square squares[][];
-	List<Pair> mines_position = new ArrayList<Pair>();
+	List<Pair> mines_position = new ArrayList<Pair>(); 
 	Random rand = new Random();
 
 	Board() { //Testeado entero
