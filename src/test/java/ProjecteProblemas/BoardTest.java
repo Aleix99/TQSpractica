@@ -13,11 +13,12 @@ public class BoardTest {
 	public void testSetBoard() {
 		
 		//Test de Caja negra - Particiones equivalentes y valores límites/frontera
+		//Caja Blanca - Decision, Condition y Path Coverage
 		//Check si se ha inizializado bien (todas las casillas = 0)
 		int test_1=10; //Válido
 		int test_2=16; //Válido
 		int test_3=20; //Válido
-		int test_4=1; //Inválido
+		int test_4=0; //Inválido
 		int test_5=-1; //Inválido
 		int test_6=100; //Inválido
 		
@@ -117,12 +118,10 @@ public class BoardTest {
 			
 		//Pasamos por el Default - Coverage y Path
 			Board b_4 = new Board();
-			b_4.setBoard(4);
+			b_4.setBoard(test_4);
 			assertEquals(0,b_4.size);
 			
 		//Valores frontera
-			Square[][] squares_5;
-			squares_5 = new Square[test_5][test_5];
 			Board b_5 = new Board();
 			check = true;
 			b_5.setBoard(test_5);
@@ -131,30 +130,23 @@ public class BoardTest {
 			
 			
 			Square[][] squares_6;
-			squares_6 = new Square[test_6][test_6];
 			Board b_6 = new Board();
 			check = true;
 			b_6.setBoard(test_6);
 			//Comprobamos que el tablero no se inicializa correctamente
 			assertEquals(0,b_6.size);
-			
-			
-		
-		
 	}
 
 	@Test
 	public void testRestartBoard() {
+		//Coverage
 		Board b = new Board();
-		
-		
-		
-		
 	}
 
 	
 	@Test
 	public void testGenerateRandomMines() {
+		//Coverage Testing
 		//Veremos si se ha puesto alguna bomba, con el check
 		boolean check=false;
 		int test_1=10;
@@ -175,36 +167,36 @@ public class BoardTest {
 			j=0;
 			i++;
 		}
-		
 		assertTrue(check);
-		
 		board_1.drawBoard();
 	}
 	
 	@Test
 	public void testOpenSquare()
 	{
-		//Test para verificar si el método cambia el valor de un Square
-		boolean check=false;
-		int test_1=10;
-		Board board_1 = new Board();
-		board_1.setBoard(1);
-		board_1.openSquare(0, 0);
-		
-		check=board_1.squares[0][0].open;
-		
-		assertTrue(check);
-		
-		//Como el Test anterior pero provando el nuevo diseño del código 
-		boolean check_2=false;
-		int test_2=10;
-		Board board_2 = new Board();
-		board_2.setBoard(2);
-		
-		assertTrue(board_2.openSquare(1, 1));
-		
-		//Ahora probamos que no se puede volver abrir una casilla abierta
-		assertFalse(board_2.openSquare(1, 1));
+		//Test Coverage, Decision y Condition
+		//Test Path Coverage: El método tiene 2 caminos
+			//Check para verificar si el método cambia el valor de un Square ( Camino 1: Casilla está cerrada y la abrimos)
+			boolean check=false;
+			int test_1=10;
+			Board board_1 = new Board();
+			board_1.setBoard(1);
+			board_1.openSquare(0, 0);
+			
+			assertEquals(true,board_1.squares[0][0].open);
+			
+			
+			//Como el Test anterior pero provando el nuevo diseño del código 
+			boolean check_2=false;
+			int test_2=10;
+			Board board_2 = new Board();
+			board_2.setBoard(2);
+			
+			assertTrue(board_2.openSquare(1, 1));
+			
+			//Camino 2: La casilla ya está abierta
+			//Ahora probamos que no se puede volver abrir una casilla abierta
+			assertFalse(board_2.openSquare(1, 1));
 		
 		
 	}
@@ -212,6 +204,9 @@ public class BoardTest {
 	@Test
 	public void testCalculateValue()
 	{
+		//Coverage Test
+		//Crearemos un tablero resultado (board_mock_1) y un tablero normal (board_test)
+		//los cuales al final compararemos si los valores de las casillas son iguales
 		int test_1=10;
 		Board board_mock_1 = new Board();
 		board_mock_1.setBoard(1);
@@ -311,6 +306,7 @@ public class BoardTest {
 	@Test
 	public void testPutFlag()
 	{
+		
 		//Ponemos bandera
 		Board b = new Board();
 		b.setBoard(1); // Size= 10
@@ -321,7 +317,7 @@ public class BoardTest {
 		//Ponemos otra vez bandera (osea la quitamos)
 		b.putFlag(1,1);
 		assertEquals(false,b.squares[1][1].flag);
-		
+		//Decision Coverage 
 		//Condition Coverage y Caja Negra ( Valores límite y frontera)
 			//Nos salimos de los límites de la matriz
 			assertEquals(false,b.putFlag(-1,-1));

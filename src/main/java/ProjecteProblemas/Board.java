@@ -35,22 +35,23 @@ public class Board {
 			this.size=10;
 			this.nMines=10;
 			this.nFlag_max=10;
+			restartBoard();
 			break;
 		case(2): //normal
 			this.size=16;
 			this.nMines=40;
 			this.nFlag_max=40;
+			restartBoard();
 			break;
 		case(3): //hard
 			this.size=20;
 			this.nMines=70;
 			this.nFlag_max=70;
+			restartBoard();
 			break;
 		default:
+			break;
 		}
-		
-		restartBoard();
-		
 	 }
 	 
 	 public void restartBoard() {
