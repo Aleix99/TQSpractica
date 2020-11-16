@@ -306,7 +306,7 @@ public class BoardTest {
 	@Test
 	public void testPutFlag()
 	{
-		
+		//Path coverage, Cubrimos los 3 caminos que tiene la función
 		//Ponemos bandera
 		Board b = new Board();
 		b.setBoard(1); // Size= 10
@@ -332,7 +332,7 @@ public class BoardTest {
 			//Nos salimos de los límites de la matriz
 			assertEquals(false,b.putFlag(100,100));
 			
-		//Path coverage
+		
 			assertEquals(true,b.putFlag(0,0));
 			assertEquals(true,b.putFlag(0,1));
 			assertEquals(true,b.putFlag(0,2));
@@ -354,7 +354,7 @@ public class BoardTest {
 	@Test
     public void testgameOver()
     {
-           
+     
         Board b = new Board();
         b.setBoard(1); //10 minas
        
@@ -402,6 +402,9 @@ public class BoardTest {
 	@Test
 	public void testRecursiveOpenSquare()
 	{
+		
+		//Test Caja Negra - Valores límites/Frontera
+		//Valor válido
 		//No pondremos ninguna bomba, así que todas las casillas deberán ser abiertas
 		Board b = new Board();
 		b.setBoard(1); //10x10
@@ -421,8 +424,7 @@ public class BoardTest {
 			i++;
 		}
 		assertEquals(true,check);
-		
-		
+		//Valor válido
 		//Pondremos bombas, calcularemos valores para las casillas y verificaremos
 		//si el método nos da igual al tablero "Mock"
 		
@@ -489,11 +491,20 @@ public class BoardTest {
 		}
 		assertEquals(true,check);
 		
+		//Caixa Blanca - Valores frontera/límite
+		b.recursiveOpenSquare(-1,-1);
+		b.recursiveOpenSquare(-1,1);
+		b.recursiveOpenSquare(1,-1);
+		b.recursiveOpenSquare(100,-1);
+		b.recursiveOpenSquare(-1,100);
+		b.recursiveOpenSquare(1,100);
+		b.recursiveOpenSquare(100,100);
 	}
 	
 	@Test
 	public void testLoseGame()
 	{
+		
 		//Caso jugador abre mina
 		Board b=new Board();
 		randomMock rand = new randomMock();
@@ -527,7 +538,7 @@ public class BoardTest {
 	@Test
 	public void testDrawBoard()
 	{
-		//Test Caixa blanca: Decision, Condition, Path
+		//Test Caixa blanca: Decision y Condition
 		Board b=new Board();
 		b.setBoard(1);
 		b.squares[0][0].value=1;
@@ -537,8 +548,6 @@ public class BoardTest {
 		b.putFlag(0, 2);
 		
 		b.drawBoard();
-		
-		
 	}
 	
 
